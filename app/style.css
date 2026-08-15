@@ -1,0 +1,332 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border: 1px solid #252525;
+  border-radius: 16px;
+  background: #111111;
+}
+
+.logo,
+.brand {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.auth-card p,
+.muted {
+  color: #999999;
+}
+
+.input {
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px 14px;
+  border: 1px solid #292929;
+  border-radius: 9px;
+  outline: none;
+  background: #0b0b0b;
+  color: white;
+}
+
+.input:focus {
+  border-color: #666666;
+}
+
+.primary-button,
+.secondary-button {
+  border-radius: 9px;
+  padding: 11px 16px;
+  border: 0;
+  font-weight: 600;
+}
+
+.primary-button {
+  width: 100%;
+  margin-top: 18px;
+  background: white;
+  color: black;
+}
+
+.secondary-button {
+  background: #1c1c1c;
+  border: 1px solid #303030;
+  color: white;
+}
+
+.text-button {
+  width: 100%;
+  margin-top: 16px;
+  border: 0;
+  background: transparent;
+  color: #999999;
+}
+
+.topbar,
+.editor-topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  border-bottom: 1px solid #222222;
+  background: #0d0d0d;
+}
+
+.menu-button,
+.avatar {
+  border: 0;
+  background: transparent;
+  color: white;
+}
+
+.menu-button {
+  font-size: 22px;
+}
+
+.avatar {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #222222;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  z-index: 10;
+  width: 220px;
+  padding: 8px;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  background: #111111;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border: 0;
+  border-radius: 7px;
+  text-align: left;
+  background: transparent;
+  color: white;
+}
+
+.menu button:hover {
+  background: #1d1d1d;
+}
+
+.dashboard-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 24px;
+}
+
+.eyebrow,
+.panel-title {
+  color: #777777;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-content h1 {
+  margin: 8px 0;
+  font-size: 34px;
+}
+
+.empty-project {
+  margin-top: 50px;
+  padding: 60px 20px;
+  text-align: center;
+  border: 1px dashed #303030;
+  border-radius: 16px;
+}
+
+.empty-icon {
+  font-family: monospace;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.empty-project p {
+  color: #888888;
+}
+
+.empty-project .secondary-button {
+  margin-top: 12px;
+}
+
+.project-name {
+  color: #999999;
+}
+
+.editor-layout {
+  height: calc(100vh - 60px);
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+}
+
+.file-panel,
+.code-panel,
+.preview-panel {
+  min-width: 0;
+  border-right: 1px solid #222222;
+  background: #0d0d0d;
+}
+
+.file-panel {
+  padding: 14px;
+}
+
+.panel-title {
+  margin-bottom: 12px;
+}
+
+.file-item {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  border: 0;
+  border-radius: 6px;
+  text-align: left;
+  background: transparent;
+  color: #bdbdbd;
+}
+
+.file-item:hover,
+.file-item.active {
+  background: #1b1b1b;
+  color: white;
+}
+
+.file-actions {
+  margin-top: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.file-actions button {
+  padding: 8px;
+  border: 1px solid #292929;
+  border-radius: 7px;
+  background: #151515;
+  color: white;
+}
+
+.code-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-tab {
+  padding: 10px 14px;
+  border-bottom: 1px solid #222222;
+  color: #bbb;
+  font-family: monospace;
+}
+
+.code-editor {
+  flex: 1;
+  width: 100%;
+  resize: none;
+  border: 0;
+  outline: none;
+  padding: 18px;
+  background: #090909;
+  color: #e5e5e5;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.preview-panel {
+  border-right: 0;
+  padding: 14px;
+}
+
+.preview-content {
+  min-height: 300px;
+  margin-top: 15px;
+  padding: 24px;
+  border-radius: 8px;
+  background: white;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  .editor-layout {
+    grid-template-columns: 190px 1fr;
+  }
+
+  .preview-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .file-panel {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 30px 18px;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+}
