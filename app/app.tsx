@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+
 import Auth from "./auth";
 import Dashboard from "./dashboard";
 import Project from "./project";
@@ -6,7 +8,7 @@ import "./style.css";
 
 type Page = "auth" | "dashboard" | "project";
 
-export default function App() {
+function App() {
   const [page, setPage] = useState<Page>("auth");
 
   return (
@@ -16,7 +18,9 @@ export default function App() {
       )}
 
       {page === "dashboard" && (
-        <Dashboard onOpenProject={() => setPage("project")} />
+        <Dashboard
+          onOpenProject={() => setPage("project")}
+        />
       )}
 
       {page === "project" && (
@@ -25,3 +29,15 @@ export default function App() {
     </>
   );
 }
+
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(rootElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
